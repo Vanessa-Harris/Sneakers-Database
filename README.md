@@ -47,6 +47,7 @@ it this way, we were able to create a database that was more robust and had conn
 one-to-many.
 
 Physical Design:
+
 The basic need our database is trying to fulfill is the ability to locate the specific shoes and/or
 characteristics about that shoe. Our data was obtained from StockX so we used that as one of the
 first project constraints that our group came across. We took the overall results from the database
@@ -84,5 +85,6 @@ above a size 8 and women often wear sizes below that (the size scale is in mens)
 were able to use the size data that we had in order to determine the probable gender group for each shoe.
 
 Reference List:
+
 Einhorn, J. (2019, March 7). Attention Data Nerds: The StockX Data Contest Is. . . StockX
 News. https://stockx.com/news/the-2019-data-contest/
