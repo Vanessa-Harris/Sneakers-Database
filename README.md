@@ -1,5 +1,6 @@
 # Sneakers-Database
 Introduction:
+
 Our group created a database that is centralized around sneakers and the various different styles,
 types, sizes, and costs associated with them. The database will help those interested in sneakers
 find various information regarding the shoe as it relates to that criteria, as well as provide a
@@ -19,6 +20,7 @@ database, we want our select statements to pinpoint statistics regarding shoes l
 size, and so on. Essentially, it is a better search engine for sneakers.
 
 Database Description:
+
 Our database is focused on the sorting of sneakers by their shoe style, price, size, availability,
 brand, and inventory. This way it makes the ease of locating one's specific shoe need easy with
 various filter options to help them locate whatever they may be looking for.
@@ -64,6 +66,7 @@ complex database would create unnecessary clutter with variables that sneaker lo
 actually care about.
 
 Sample Data:
+
 The data in our database was taken from the original StockX website. In the end we decided to
 take every individual shoe type for all men and women shoes that were provided via the original
 dataset and sorted them accordingly with the other different types of categories.
