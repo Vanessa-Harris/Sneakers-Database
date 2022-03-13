@@ -1,0 +1,79 @@
+﻿– The following list describes what each query we wrote for our database displays and its –subsequent code:
+–Query 1: Creates a view that shows the average price of all of the womens shoes
+–Raw Code:
+USE sneakers;
+CREATE VIEW womens_avg AS
+SELECT AVG(price) AS 'Avg Women Shoe Price'
+FROM inventory
+JOIN PRICE USING (price_id)
+JOIN shoe_size_inventory USING (Inventory_ID)
+WHERE Size_ID = 2 
+–Query 2:  CREATES A VIEW WHILE USING AGGREGATE THAT SHOWS USER –TOTAL NUMBER OF UNIQUE STYLES
+–Raw Code:
+USE sneakers;
+CREATE VIEW unique_styles AS
+SELECT COUNT(Shoe_Name) as total_sneakers
+FROM inventory;
+(SELECT *  FROM unique_styles)
+–Query 3: Create view that displays release date WHERE shoe style is –Adidas_Yeezy_Boost_350_Low, Adidas_Yeezy_Boost_350_V2, –Nike_Air_Presto_Off_White, or Air_Jordan_1_Retro_High (aka style_id < 5)
+–RAW CODE: 
+USE sneakers;
+CREATE VIEW four_style_dates AS
+SELECT Shoe_Name AS 'Shoe Name', Release_Date AS "Release Date"
+FROM Inventory
+JOIN Shoe_Style_Inventory USING (Inventory_ID)
+JOIN Shoe_Style USING (Style_ID)
+WHERE Style_ID < 5;
+
+
+–Query 4: CREATES A SUBQUERY FOR SHOE NAMES THAT ARE NOT AVAILABLE
+–RAW CODE: 
+USE sneakers;
+
+
+CREATE VIEW unavailable AS
+
+
+SELECT Shoe_Name, Availibility_ID
+
+
+FROM inventory
+
+
+WHERE Shoe_Name IN 
+   
+ (SELECT Shoe_Name
+
+
+     FROM inventory
+
+
+     WHERE Availibility_ID = 2 );
+
+
+
+
+–Query 5: CREATES A VIEW that displays a recap of  the essential release information on –a shoe
+–RAW CODE: 
+USE sneakers;
+
+
+CREATE VIEW release_recap AS
+
+
+SELECT size AS 'Size', Brand_Name, Release_Date
+
+
+FROM size
+
+
+JOIN shoe_size_inventory USING (Size_ID)
+
+
+JOIN inventory USING (Inventory_ID)
+
+
+JOIN brand USING (Brand_ID)
+
+
+ORDER BY Release_Date
